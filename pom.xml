@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  
+  <!-- =============================================================== -->
+    <!-- Informations du projet -->
+    <!-- =============================================================== -->
+    <!-- ===== Informations Maven ===== -->
+
+  <groupId>com.projet3.demo</groupId>
+  <artifactId>appli-escalade</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <!-- ===== Informations générales ===== -->
+
+  <name>appli-escalade</name>
+  <description>Application web communautaire sur l'escalade</description>
+  <url>http://maven.apache.org</url>
+  
+  <!-- ===== Organisation ===== -->
+  
+  <organization>
+        <name>CapGemini</name>
+        <url>http://www.capgemini.com</url>
+    </organization>
+    
+  <!-- ===== Licences ===== -->
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <build>
+        <directory>${project.basedir}/output</directory>
+        
+        
+        
+        <pluginManagement>
+        	<plugins>
+        		<plugin>
+        			<groupId>org.apache.maven.plugins</groupId>
+        			<artifactId>maven-jar-plugin</artifactId>
+        			<version>3.0.2</version>
+        		</plugin>     	
+        	</plugins>
+        </pluginManagement>
+        <plugins>
+        	<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-jar-plugin</artifactId>
+        		<configuration>
+        			<archive>
+        				<manifest>
+        					<mainClass>org.projet3.demo.App</mainClass>
+        				</manifest>
+        			</archive>
+        		</configuration>      		
+        	</plugin>
+        </plugins>
+        
+  </build>
+  
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>com.projet3.demo</groupId>
+  			<artifactId>frontEnd</artifactId>
+  			<version>1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>com.projet3.demo</groupId>
+  			<artifactId>backEnd</artifactId>
+  			<version>1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+      		<groupId>javax.servlet</groupId>
+      		<artifactId>jstl</artifactId>
+      		<version>1.2</version>
+    	</dependency>
+  	</dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>frontEnd</module>
+    <module>backEnd</module>
+  </modules>
+</project>
